@@ -2,13 +2,17 @@
 #include"workerManager.h"
 using namespace std;
 
+
 int main()
 {
-	WorkerManager w;
+	//test();
+	//system("pause");
+	//exit(0);
+	WorkerManager wm;
 	int select = 0;
 	while (true)
 	{
-		w.Show_Menu();//展示菜单
+		wm.Show_Menu();//展示菜单
 		cout << "请输入选择" << endl;
 		cin >> select;
 		if (cin.fail()) //若流操作失败，则返回true
@@ -24,6 +28,7 @@ int main()
 			switch (select)
 			{
 			case 0: //退出系统
+				wm.ExitSystem();
 				break;
 			case 1: //添加职工
 				break;

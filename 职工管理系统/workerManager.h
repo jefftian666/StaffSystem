@@ -9,4 +9,5 @@ public:
 	~WorkerManager();
 	//Õ¹Ê¾²Ëµ¥
 	void Show_Menu();
+	void ExitSystem();
 };
