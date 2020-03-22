@@ -43,6 +43,7 @@ int main()
 				wm.modEmp();
 				break;
 			case 5: //查找职工
+				wm.findEmp();
 				break;
 			case 6: //排序职工
 				break;

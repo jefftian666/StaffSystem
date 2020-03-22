@@ -1,3 +1,4 @@
+//职工管理系统类 源文件
 #include"workerManager.h"
 
 //WorkerManager构造函数
@@ -313,6 +314,64 @@ void WorkerManager::modEmp()
 			this->save();
 			cout << "修改成功" << endl;
 
+		}
+	}
+	system("pause");
+	system("cls");
+}
+//查找职工
+void  WorkerManager::findEmp()
+{
+	if (this->m_fileIsEmpty)
+	{
+		cout << "文件为空" << endl;
+	}
+	else
+	{
+		cout << "请输入查找方式：1 按id 2 按姓名" << endl;
+		int choice;
+		cin >> choice;
+		if (choice == 1)
+		{
+			cout << "请输入要查找员工的id：" << endl;
+			int id = 0;
+			cin >> id;
+			int ret = this->isExist(id);
+			if (ret == -1)//按id查找
+			{
+				//不存在
+				cout << "查无此人" << endl;
+			}
+			else
+			{
+				cout << ret << "号职工信息如下：" << endl;
+				this->m_empArray[ret]->showInfo();
+			}
+		}
+		else if (choice == 2)//按姓名查找
+		{
+			string name = "";
+			cout << "请输入要查找员工的姓名：" << endl;
+			cin >> name;
+			bool falg = false;
+			for (int i = 0; i < this->m_empNum; i++)
+			{
+				if (this->m_empArray[i]->m_name == name)
+				{
+					cout << "姓名为" << name << "的职工信息为下：" << endl;
+					this->m_empArray[i]->showInfo();
+					falg = true;
+					break;
+				}
+			}
+			if (!falg)
+			{
+				cout << "查无此人" << endl;
+			}
+		}
+		else
+		{
+			cout << "输入选项有误" << endl;
 		}
 	}
 	system("pause");

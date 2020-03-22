@@ -33,6 +33,8 @@ public:
 	int isExist(int id);
 	//修改职工信息
 	void modEmp();
+	//查找职工
+	void findEmp();
 
 
 	//当前的员工数量
