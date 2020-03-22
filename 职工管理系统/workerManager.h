@@ -35,5 +35,8 @@ public:
 	void initEmpArray();
 	//显示所有员工信息
 	void showEmp();
-
+	//删除职工
+	void delEmp();
+	//按照职工编号判断职工是否存在,若存在返回职工在数组中位置，不存在返回-1
+	int isExist(int id);
 };
