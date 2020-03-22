@@ -425,3 +425,32 @@ void WorkerManager::sortEmpArray()
 		cout << "排序成功" << endl;
 	}
 }
+//清空文件
+void WorkerManager::cleanFile()
+{
+	cout << "清空文件？" << endl;
+	cout << "1 是 2 否" << endl;
+	int select = 0;
+	cin >> select;
+	if (select == 1)
+	{
+		ofstream ofs;
+		ofs.open(FILENAME, ios::trunc);//打开模式 ios::trunc 如果存在删除文件并重新创建
+		ofs.close();
+		if (this->m_empArray != NULL)
+		{
+			for (int i = 0; i < this->m_empNum; i++)
+			{
+				delete this->m_empArray[i];
+
+			}
+			delete[] this->m_empArray;
+			this->m_empArray = NULL;
+			this->m_empNum = 0;
+			this->m_fileIsEmpty = true;
+		}
+		cout << "清空成功" << endl;
+	}
+	system("pause");
+	system("cls");
+}

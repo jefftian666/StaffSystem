@@ -49,6 +49,7 @@ int main()
 				wm.sortEmpArray();
 				break;
 			case 7: //清空文件
+				wm.cleanFile();
 				break;
 			default:
 				cout << "请输入0-7" << endl;
@@ -57,13 +58,7 @@ int main()
 				break;
 			}
 		}
-		
-		
 	}
-
-
-
-
 	system("pause");
 	return 0;
 }

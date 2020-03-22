@@ -37,6 +37,8 @@ public:
 	void findEmp();
 	//选择排序
 	void sortEmpArray();
+	//清空文件
+	void cleanFile();
 
 
 	//当前的员工数量
