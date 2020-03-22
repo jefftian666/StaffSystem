@@ -46,6 +46,7 @@ int main()
 				wm.findEmp();
 				break;
 			case 6: //排序职工
+				wm.sortEmpArray();
 				break;
 			case 7: //清空文件
 				break;

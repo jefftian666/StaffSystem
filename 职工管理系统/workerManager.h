@@ -35,6 +35,8 @@ public:
 	void modEmp();
 	//查找职工
 	void findEmp();
+	//选择排序
+	void sortEmpArray();
 
 
 	//当前的员工数量

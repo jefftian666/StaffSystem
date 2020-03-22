@@ -377,3 +377,51 @@ void  WorkerManager::findEmp()
 	system("pause");
 	system("cls");
 }
+//选择排序
+void WorkerManager::sortEmpArray()
+{
+	if (this->m_fileIsEmpty)
+	{
+		cout << "文件为空或不存在" << endl;
+		system("pause");
+		system("cls");
+	}
+	else
+	{
+		cout << "请输入排序方式：1 升序 2 降序" << endl;
+		int select = 1;
+		cin >> select;
+		for (int i = 0; i < this->m_empNum; i++)
+		{
+			int MinOrMax = i;
+			for (int j = i + 1; j < this->m_empNum; j++)
+			{
+				if (select == 1)//升序
+				{
+					if (this->m_empArray[MinOrMax]->m_id > this->m_empArray[j]->m_id)
+					{
+						MinOrMax = j;//找最小值的下标
+					}
+				}
+				else//降序
+				{
+					if (this->m_empArray[MinOrMax]->m_id < this->m_empArray[j]->m_id)
+					{
+						MinOrMax = j;//找最大值的下标
+					}
+				}
+
+			}
+			if (i != MinOrMax)//找完下标后，和前边交换位置
+			{
+				Worker* temp = this->m_empArray[i];
+				this->m_empArray[i] = this->m_empArray[MinOrMax];
+				this->m_empArray[MinOrMax] = temp;
+			}
+
+		}
+		this->showEmp();
+		this->save();
+		cout << "排序成功" << endl;
+	}
+}
