@@ -40,6 +40,7 @@ int main()
 				wm.delEmp();
 				break;
 			case 4: //修改职工
+				wm.modEmp();
 				break;
 			case 5: //查找职工
 				break;
