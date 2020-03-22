@@ -11,7 +11,7 @@ WorkerManager::WorkerManager()
 		cout << "文件不存在" << endl;
 		this->m_empNum = 0;
 		this->m_empArray = NULL;
-		this->m_fileIsEmpty = false;
+		this->m_fileIsEmpty = true;
 		ifs.close();
 		return;
 	}
@@ -23,7 +23,7 @@ WorkerManager::WorkerManager()
 		cout << "文件为空" << endl;
 		this->m_empNum = 0;
 		this->m_empArray = NULL;
-		this->m_fileIsEmpty = false;
+		this->m_fileIsEmpty = true;
 		ifs.close();
 		return;
 	}
@@ -201,4 +201,21 @@ void WorkerManager::initEmpArray()
 		index++;
 	}
 	ifs.close();
+}
+//显示所有员工信息
+void WorkerManager::showEmp()
+{
+	if (this->m_fileIsEmpty)
+	{
+		cout << "文件不存在或记录为空！" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < this->m_empNum; i++)
+		{
+			this->m_empArray[i]->showInfo();
+		}
+	}
+	system("pause");
+	system("cls");
 }

@@ -33,5 +33,7 @@ public:
 	int getEmpNum();
 	//初始化员工数组
 	void initEmpArray();
+	//显示所有员工信息
+	void showEmp();
 
 };
